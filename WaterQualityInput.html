@@ -1,0 +1,74 @@
+<!DOCTYPE html> 
+<html lang = “en”> 
+	<head> 
+
+		<title> Water Quality Input </title> <!-- creating a title for the website --> 
+
+		<meta charset = “UTF-8”> <!-- specifying character coder in html -->
+		<meta name = “viewport” content = “width = device-width, initial-0scale = 1.0”> <!-- creaing the page dimensions and character-->
+	<style>
+	/* creating the style for the headers class */
+	body {
+  		font-family: Arial;
+  		margin: 0;
+		}
+
+		/* creating the header characteristics */
+		.header {
+  		padding: 60px;
+  		text-align: center;
+  		background: #0000FF;
+  		color: white;
+  		font-size: 30px;
+  			}
+  	</style>
+	<head>
+
+	<body> 
+		<div class="header"> <!-- calling the header class I created on the header -->
+  			<h1>Water Quality Calculator</h1> <!-- naming the header -->
+ 	 		<p>fill out the form:</p>
+		</div>
+		<main> 
+			<form action = "WaterQuality.html"> <!-- specifying the url action -->
+
+				<label for="type"> Type of Water </label><br> <!-- creating lables for the text entries -->
+  				<input type= "text" id = "type" name = "typeOW" value = ""><br><b> <!-- creaitnng the input box -->
+				
+				<label for="temp"> Temperature (˚C) </label><br>
+				<input type = "text" id = "temp" name = "temp" value = ""><br>
+				
+				<label for="desox"> Desolved Oxygen (mg/L) </label><br>
+  				<input type= "text" id = "desox" name = "desox" value = ""><br><b>
+ 				
+ 				<label for="ph"> pH Levels (pH) </label><br>
+  				<input type= "text" id = "ph" name = "ph" value = ""><br><b>
+				
+				<label for="salt"> Salinity (%) </label><br>
+  				<input type= "text" id = "salt" name = "salt" value = ""><br><b>
+				
+				<label for="nutr"> Nutrients </label><br>
+  				<input type= "text" id = "nutr" name = "nutr" value = ""><br><b>
+
+  					<script type="text/javascript"> /* storing the input values of the different values fom the text boxes*/
+  						var typeIn = document.getElementById("type").value; /* creating a new variable using the text id */
+  						sessionStorage.setItem("type", typeIn); /* using the sessionStorage method to use the variables accross files */
+  						var tempt = document.getElementById("temp").value;
+  						sessionStorage.setItem("tempt", temptIn);
+  						var desoxIn = document.getElementById("desox").value;
+  						sessionStorage.setItem("desox", desoxIn);
+  						var phIn = document.getElementById("ph").value;
+  						sessionStorage.setItem("ph", phIn);
+  						var saltIn = document.getElementById("salt").value;
+  						sessionStorage.setItem("salt", saltIn);
+  						var nutrIn = document.getElementById("nutr").value;
+  						sessionStorage.setItem("nutr", nutrIn);
+  					</script>
+
+ 				<input type="submit" value="Submit">
+
+			</form>
+		</main>
+		<footer> </footer>
+	</body>
+</html>
