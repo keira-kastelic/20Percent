@@ -1,6 +1,6 @@
 <!-- 
 Keira Kastelic 20% Project
-Last Edited: December 20th 2022
+Last Edited: May 3rd 2023
 Water Calculator input value file
 -->
 
@@ -27,22 +27,23 @@ Water Calculator input value file
   		color: white;
   		font-size: 30px;
   			}
+
   	</style>
 	<head>
 
 	<body> 
 		<div class="header"> <!-- calling the header class I created on the header -->
   			<h1>Water Quality Calculator</h1> <!-- naming the header -->
-  			<img src="https://www.gardenroute.gov.za/wp-content/uploads/2022/09/shutterstock_1017020353-2.jpg">
- 	 		<p> FILL OUT FORM BELOW:</p>
+  			<img src="https://www.gardenroute.gov.za/wp-content/uploads/2022/09/shutterstock_1017020353-2.jpg"> <!-- inserting an image in the header -->
+ 	 		<p> FILL OUT FORM BELOW:</p> <!-- printing out text to prompt the user -->
 		</div>
 		<main> 
 			<form action = "WaterQuality.html"> <!-- specifying the url action -->
 
 				<label for = "myCheck" > Type of Water </label><br> <!-- creating lables for the text entries -->
   				
-				<input type = "checkbox" id = "sea" name = "sea" value = "Sea" onclick = "getSea()">
-				<label for= "sea"> Sea </label><br>
+				<input type = "checkbox" id = "sea" name = "sea" value = "Sea" onclick = "getSea()"> <!-- creating a check box under the id and value sea -- adding an onclick function to track and manipulate when clicked  -->
+				<label for= "sea"> Sea </label><br> <!-- adding the lable for the box  -->
 				
 				<input type = "checkbox" id = "ocean" name = "ocean" value = "Ocean" onclick = "getOcean()">
 				<label for= "ocean"> Ocean </label><br>
@@ -142,7 +143,7 @@ Water Calculator input value file
 				<label for = "salThirty"> Calcium (Ca) </label><br>
   				
   				 
-
+				<!-- old code -- meant for tracking and testing links and print methods for future plans  -->
   				<p id = "printSea" style="display:none"> https://www.epa.gov/salish-sea/marine-water-quality </p>
   				<p id = "printOcean" style="display:none"> https://www.nps.gov/subjects/oceans/water-quality.htm </p>
   				<p id = "printLake" style="display:none"> https://www2.gnb.ca/content/gnb/en/departments/elg/environment/content/water/content/lakes/properties.html#:~:text=In%20a%20healthy%20lake%2C%20nutrients,common%20nutrients%20in%20a%20lake. </p>
@@ -173,16 +174,14 @@ Water Calculator input value file
   				<p id = "printCalcium" style="display:none"> https://www.iisd.org/ela/blog/commentary/calcium-matters-fresh-water-happens-not-enough/ </p>
 
   				<script type="text/javascript"> /* storing the input values of the different values fom the text boxes*/
-  					
-  					localStorage.setItem('sea',printSea);
 
-  					function getSea(){
-  						var checkSea = document.getElementById("sea");
-  						var textSea = document.getElementById("printSea");
-  						if (checkSea.checked == true){
-    						localStorage.setItem('sea',"https://www.epa.gov/salish-sea/marine-water-quality");
+  					function getSea(){ /* initializing the functions used in the check boxes above */
+  						var checkSea = document.getElementById("sea"); /*  creating a variable using the check box element for the value */
+  						var textSea = document.getElementById("printSea"); /*  creating a print value for future testing */
+  						if (checkSea.checked == true){ /* creating an if statement to see if the box is checked  */
+    						localStorage.setItem('sea',"https://www.epa.gov/salish-sea/marine-water-quality"); /* using local storage to set a key and value to be passed on to other files  */
   						} else {
-  							localStorage.setItem('sea' , " ");
+  							localStorage.setItem('sea' , " "); /* if the check is not clicked setting the value of the storage to nothing  */
   						}
   					}
   					function getOcean(){
@@ -451,19 +450,16 @@ Water Calculator input value file
   					}
 
 
-
-  				
-
-
-
-
 	
   				</script>
 
- 				<input type="submit" value="Submit">
+ 				<input type="submit" value="Submit"> <!-- creating a submitt button that redirects the user to another page -->
 
 			</form>
 		</main>
 		<footer> </footer>
 	</body>
 </html>
+
+
+
