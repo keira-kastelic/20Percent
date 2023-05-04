@@ -1,6 +1,6 @@
 <!-- 
 Keira Kastelic 20% Project
-Last Edited: December 20th 2022
+Last Edited: May 3rd 2023
 Water Calculator output value file
 -->
 
@@ -36,7 +36,7 @@ Water Calculator output value file
 		<main> 
          <form action = "display.html"> <!-- specifying the url action -->
 
-         <div> <span id = 'sea' ></span> </div>
+         <div> <span id = 'sea' ></span> </div> <!-- creating id's to be used in the retreval of variables --> 
          <div> <span id = 'ocean' ></span> </div>
          <div> <span id = 'lake' ></span> </div>
          <div> <span id = 'river' ></span> </div>
@@ -67,11 +67,11 @@ Water Calculator output value file
 
 
 		<script type="text/javascript"> /* using the javascript tag */
-			
-			const Sea = localStorage.getItem('sea');
-			document.getElementById('sea').innerHTML = Sea;
 
-		    const Ocean = localStorage.getItem('ocean');
+			const Sea = localStorage.getItem('sea'); /* creating a const based on the local storage variable passed on */
+			document.getElementById('sea').innerHTML = Sea; /* printing the values using the getElementById method and equaling it to the const */
+
+		    const Ocean = localStorage.getItem('ocean'); 
 		    document.getElementById('ocean').innerHTML = Ocean;
 
 		    const Lake = localStorage.getItem('lake');
@@ -149,7 +149,6 @@ Water Calculator output value file
 			const Calcium = localStorage.getItem('calcium');
 			document.getElementById('calcium').innerHTML = Calcium;
 
-		
 
 		</script>
 		</main>
