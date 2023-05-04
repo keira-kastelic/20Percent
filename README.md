@@ -11,3 +11,6 @@ The water quality input file is where I prompt the user and read in their input.
 
 Water Quality:
 This is where I code the different if statements and conditions of each of the characteristics to print likns and helpo the user. I take in the data and determine is it is below, above, or average and print links to help the condition.
+
+User:
+In order to run the code, you must download the files into a text reader. From there the user only has to click on the HTML file that opens up a search browser. The user must select boxes and press the submit button to get results from the water quality calculator.
