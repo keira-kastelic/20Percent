@@ -15,7 +15,7 @@ Water Calculator input value file
 	<style>
 	/* creating the style for the headers class */
 	body {
-  		font-family: Arial;
+  		font-family: NewCenturySchlbak-Bold;
   		margin: 0;
 		}
 
@@ -33,43 +33,432 @@ Water Calculator input value file
 	<body> 
 		<div class="header"> <!-- calling the header class I created on the header -->
   			<h1>Water Quality Calculator</h1> <!-- naming the header -->
- 	 		<p>fill out the form:</p>
+  			<img src="https://www.gardenroute.gov.za/wp-content/uploads/2022/09/shutterstock_1017020353-2.jpg">
+ 	 		<p> FILL OUT FORM BELOW:</p>
 		</div>
 		<main> 
 			<form action = "WaterQuality.html"> <!-- specifying the url action -->
 
-				<label for="type"> Type of Water </label><br> <!-- creating lables for the text entries -->
-  				<input type= "text" id = "type" name = "typeOW" value = ""><br><b> <!-- creaitnng the input box -->
+				<label for = "myCheck" > Type of Water </label><br> <!-- creating lables for the text entries -->
+  				
+				<input type = "checkbox" id = "sea" name = "sea" value = "Sea" onclick = "getSea()">
+				<label for= "sea"> Sea </label><br>
 				
+				<input type = "checkbox" id = "ocean" name = "ocean" value = "Ocean" onclick = "getOcean()">
+				<label for= "ocean"> Ocean </label><br>
+
+				<input type = "checkbox" id = "lake" name = "lake" value = "Lake" onclick = "getLake()">
+				<label for= "lake"> Lake </label><br>
+				
+				<input type = "checkbox" id = "river" name = "river" value = "River" onclick = "getRiver()">
+				<label for = "river"> River </label><br>
+
+				<input type = "checkbox" id = "pond" name = "pond" value = "Pond" onclick = "getPond()">
+				<label for = "pond"> Pond </label><br>
+
+				<input type = "checkbox" id = "wetlands" name = "wetlands" value = "Wetlands" onclick = "getWetlands()">
+				<label for = "wetlands"> Wetlands </label><br>
+
+
 				<label for="temp"> Temperature (˚C) </label><br>
-				<input type = "text" id = "temp" name = "temp" value = ""><br>
+				
+				<input type = "checkbox" id = "fifteen" name = "fifteen" value = "Fifteen" onclick = "getFifteen()">
+				<label for = "fifteen"> > 15˚ </label><br>
+
+				<input type = "checkbox" id = "twenty" name = "twenty" value = "Twenty" onclick = "getTwenty()">
+				<label for = "twenty"> 20 - 30˚ </label><br>
+
+				<input type = "checkbox" id = "thirty" name = "thirty" value = "Thirty" onclick = "getThirty()">
+				<label for = "thirty"> 30 - 40˚ </label><br>
+
+				<input type = "checkbox" id = "fourty" name = "fourty" value = "Fourty" onclick = "getFourty()">
+				<label for = "fourty"> < 40˚ </label><br>
+				
 				
 				<label for="desox"> Desolved Oxygen (mg/L) </label><br>
-  				<input type= "text" id = "desox" name = "desox" value = ""><br><b>
+
+  				<input type = "checkbox" id = "five" name = "five" value = "Five" onclick = "getFive()">
+				<label for = "five"> 5 - 6 mg/L </label><br>
+
+  				<input type = "checkbox" id = "seven" name = "seven" value = "Seven" onclick = "getSeven()">
+				<label for = "seven"> 7 - 8 mg/L </label><br>
+
+				<input type = "checkbox" id = "nine" name = "nine" value = "Nine" onclick = "getNine()">
+				<label for = "nine"> 9 - 10 mg/L </label><br>
+
+				<input type = "checkbox" id = "eleven" name = "eleven" value = "Eleven" onclick = "getEleven()">
+				<label for = "eleven"> 11 - 12 mg/L </label><br>
  				
+
  				<label for="ph"> pH Levels (pH) </label><br>
-  				<input type= "text" id = "ph" name = "ph" value = ""><br><b>
+  				
+  				<input type = "checkbox" id = "sixPH" name = "sixPH" value = "SixPH" onclick = "getSixPH()">
+				<label for = "sixPH"> 6 - 7 </label><br>
+
+				<input type = "checkbox" id = "sevenPH" name = "sevenPH" value = "SenvenPH" onclick = "getSevenPH()">
+				<label for = "sixPH"> 7 - 8 </label><br>
+
+				<input type = "checkbox" id = "eightPH" name = "eightPH" value = "eightPH" onclick = "getEightPH()">
+				<label for = "eightPH"> 8 - 9 </label><br>
+
 				
 				<label for="salt"> Salinity (%) </label><br>
-  				<input type= "text" id = "salt" name = "salt" value = ""><br><b>
+  				
+  				<input type = "checkbox" id = "salZero" name = "salZero" value = "salZero" onclick = "getSalZero()">
+				<label for = "salZero"> 0% - 10% </label><br>
+
+				<input type = "checkbox" id = "salTen" name = "salTen" value = "salTen" onclick = "getSalTen()">
+				<label for = "salTen"> 10% - 20% </label><br>
+
+				<input type = "checkbox" id = "salTwenty" name = "salTwenty" value = "salTwenty" onclick = "getSalTwenty()">
+				<label for = "salTwenty"> 20% - 30% </label><br>
+
+				<input type = "checkbox" id = "salThirty" name = "salThirty" value = "salThirty" onclick = "getSalThirty()">
+				<label for = "salThirty"> > 30% </label><br>
+
+
 				
 				<label for="nutr"> Nutrients </label><br>
-  				<input type= "text" id = "nutr" name = "nutr" value = ""><br><b>
 
-  					<script type="text/javascript"> /* storing the input values of the different values fom the text boxes*/
-  						var typeIn = document.getElementById("type").value; /* creating a new variable using the text id */
-  						sessionStorage.setItem("type", typeIn); /* using the sessionStorage method to use the variables accross files */
-  						var tempt = document.getElementById("temp").value;
-  						sessionStorage.setItem("tempt", temptIn);
-  						var desoxIn = document.getElementById("desox").value;
-  						sessionStorage.setItem("desox", desoxIn);
-  						var phIn = document.getElementById("ph").value;
-  						sessionStorage.setItem("ph", phIn);
-  						var saltIn = document.getElementById("salt").value;
-  						sessionStorage.setItem("salt", saltIn);
-  						var nutrIn = document.getElementById("nutr").value;
-  						sessionStorage.setItem("nutr", nutrIn);
-  					</script>
+  				<input type = "checkbox" id = "nitrogen" name = "nitrogen" value = "nitrogen" onclick = "getNitrogen()">
+				<label for = "nitrogen"> Nitrogen (N) </label><br>
+
+				<input type = "checkbox" id = "phosphorus" name = "phospohrus" value = "phosphorus" onclick = "getPhosphorus()">
+				<label for = "phosphorus"> Phosphorus (P) </label><br>
+
+				<input type = "checkbox" id = "iron" name = "iron" value = "iron" onclick = "getIron()">
+				<label for = "iron"> iron (Fe) </label><br>
+
+				<input type = "checkbox" id = "silicon" name = "silicon" value = "silicon" onclick = "getSilicon()">
+				<label for = "silicon"> Silicon (Si) </label><br> 
+
+				<input type = "checkbox" id = "magnessium" name = "magnessium" value = "magnessium" onclick = "getMagnessium()">
+				<label for = "magnessium"> Magnessium (Mg) </label><br>
+
+				<input type = "checkbox" id = "potassium" name = "potassium" value = "potassium" onclick = "getPotassium()">
+				<label for = "potassium"> Potassium (K)</label><br>
+
+				<input type = "checkbox" id = "calcium" name = "calcium" value = "calcium" onclick = "getCalcium()">
+				<label for = "salThirty"> Calcium (Ca) </label><br>
+  				
+  				 
+
+  				<p id = "printSea" style="display:none"> https://www.epa.gov/salish-sea/marine-water-quality </p>
+  				<p id = "printOcean" style="display:none"> https://www.nps.gov/subjects/oceans/water-quality.htm </p>
+  				<p id = "printLake" style="display:none"> https://www2.gnb.ca/content/gnb/en/departments/elg/environment/content/water/content/lakes/properties.html#:~:text=In%20a%20healthy%20lake%2C%20nutrients,common%20nutrients%20in%20a%20lake. </p>
+  				<p id = "printRiver" style="display:none"> https://storymaps.arcgis.com/stories/80614800b9394c838464678abc099aca </p>
+  				<p id = "printPond" style="display:none"> https://www.everything-ponds.com/pond-ecosystem.html#:~:text=The%20signs%20of%20a%20well,keep%20a%20pond%20running%20smoothly. </p>
+  				<p id = "printWetlands" style="display:none"> https://www.dcceew.gov.au/water/wetlands/publications/factsheet-wetlands-water-quality#:~:text=When%20healthy%2C%20wetlands%20have%20a,nutrients%20and%20pollutants%20from%20water. </p>
+  				<p id = "printFifteen" style="display:none"> https://www.weather.gov/safety/coldwater </p>
+  				<p id = "printTwenty" style="display:none"> https://climatechange.lta.org/climate-impacts/water-temperatures/</p>
+  				<p id = "printThirty" style="display:none"> https://pondpro.ca/pond-blog/the-effects-of-hot-weather-on-your-pond/</p>
+  				<p id = "printFourty" style="display:none"> https://www.iucn.org/resources/issues-brief/ocean-warming </p>
+  				<p id = "printFive" style="display:none"> https://atlas-scientific.com/blog/causes-of-low-dissolved-oxygen-in-water/ </p>
+  				<p id = "printSeven" style="display:none"> https://www.epa.gov/caddis-vol2/dissolved-oxygen#:~:text=Temperature%3A%20High%20temperatures%20reduce%20the,due%20to%20respiration%20and%20decomposition. </p>
+  				<p id = "printNine" style="display:none"> https://www.fondriest.com/environmental-measurements/parameters/water-quality/dissolved-oxygen/#:~:text=Dissolved%20Oxygen%20Saturation,-Not%20all%20water&text=In%20a%20stable%20body%20of,as%20it%20can%20in%20equilibrium. </p>
+  				<p id = "printEleven" style="display:none"> https://www.sciencedirect.com/topics/earth-and-planetary-sciences/dissolved-oxygen </p>
+  				<p id = "printSixPH" style="display:none"> https://www.watercare.com/about-us/blog/41738-what-does-low-ph-mean-is-it-safe-for-my-household.html#:~:text=Low%20pH%20water%20is%20slightly,metals%20into%20your%20drinking%20water. </p>
+  				<p id = "printSevenPH" style="display:none"> https://www.quality-life-solutions.com/about-us/blogs/35683-does-low-or-high-ph-affect-my-water.html </p>
+  				<p id = "printEightPH" style="display:none"> https://www.fondriest.com/environmental-measurements/parameters/water-quality/ph/ </p>
+  				<p id = "printSalZero" style="display:none"> https://www.eldoradosprings.com/blog/what-causes-a-high-ph-level-in-water </p>
+  				<p id = "printSalTen" style="display:none"> https://www.carbotecnia.info/learning-center/water-treatment/low-salt-water-in-health/?lang=en </p>
+  				<p id = "printSalTwenty" style="display:none"> https://www.watereducation.org/aquapedia-background/salinity </p>
+  				<p id = "printSalThirty" style="display:none"> https://www.qld.gov.au/environment/land/management/soil/salinity/impacts </p>
+  				<p id = "printNitrogen" style="display:none"> https://www.usgs.gov/special-topics/water-science-school/science/nitrogen-and-water </p>
+  				<p id = "printPhosphorus" style="display:none"> https://www.usgs.gov/special-topics/water-science-school/science/phosphorus-and-water </p>
+  				<p id = "printIron" style="display:none"> https://www.frontiersin.org/articles/10.3389/fmars.2019.00022/full </p>
+  				<p id = "printSilicon" style="display:none"> https://bg.copernicus.org/articles/18/1269/2021/ </p>
+  				<p id = "printMagnessium" style="display:none"> https://www.sciencehistory.org/distillations/magnesium-from-the-sea-to-the-stars </p>
+  				<p id = "printPotassium" style="display:none"> https://www.lenntech.com/periodic/water/potassium/potassium-and-water.htm </p>
+  				<p id = "printCalcium" style="display:none"> https://www.iisd.org/ela/blog/commentary/calcium-matters-fresh-water-happens-not-enough/ </p>
+
+  				<script type="text/javascript"> /* storing the input values of the different values fom the text boxes*/
+  					
+  					localStorage.setItem('sea',printSea);
+
+  					function getSea(){
+  						var checkSea = document.getElementById("sea");
+  						var textSea = document.getElementById("printSea");
+  						if (checkSea.checked == true){
+    						localStorage.setItem('sea',"https://www.epa.gov/salish-sea/marine-water-quality");
+  						} else {
+  							localStorage.setItem('sea' , " ");
+  						}
+  					}
+  					function getOcean(){
+  						var checkOcean = document.getElementById("ocean");
+  						var textOcean = document.getElementById("printOcean");
+  						if (checkOcean.checked == true){
+    						localStorage.setItem('ocean' , " https://www.nps.gov/subjects/oceans/water-quality.htm  ");
+  						} else {
+     						localStorage.setItem('ocean' , " ");
+  						}
+  					}
+  					function getLake(){
+  						var checkLake = document.getElementById("lake");
+  						var textLake = document.getElementById("printLake");
+  						if (checkLake.checked == true){
+    						localStorage.setItem('lake' , " https://www2.gnb.ca/content/gnb/en/departments/elg/environment/content/water/content/lakes/properties.html#:~:text=In%20a%20healthy%20lake%2C%20nutrients,common%20nutrients%20in%20a%20lake. ");
+  						} else {
+     						localStorage.setItem('lake' , " ");
+  						}
+  					}
+  					function getRiver(){
+  						var checkRiver = document.getElementById("river");
+  						var textRiver = document.getElementById("printRiver");
+  						if (checkRiver.checked == true){
+    						localStorage.setItem('river' , " https://storymaps.arcgis.com/stories/80614800b9394c838464678abc099aca  ");
+  						} else {
+     						localStorage.setItem('river' , " ");  						}
+  					}
+  					function getPond(){
+  						var checkPond = document.getElementById("pond");
+  						var textPond = document.getElementById("printPond");
+  						if (checkPond.checked == true){
+    						localStorage.setItem('pond' , " https://www.everything-ponds.com/ ");
+  						} else {
+     						localStorage.setItem('pond' , " ");
+  						}
+  					}
+  					function getWetlands(){
+  						var checkWetlands = document.getElementById("wetlands");
+  						var textWetlands = document.getElementById("printWetlands");
+  						if (checkWetlands.checked == true){
+    						localStorage.setItem('wetlands' , " https://www.dcceew.gov.au/water/wetlands/publications/factsheet-wetlands-water-quality#:~:text=When%20healthy%2C%20wetlands%20have%20a,nutrients%20and%20pollutants%20from%20water. ");
+  						} else {
+     						localStorage.setItem('wetlands' , " ");
+  						}
+  					}
+
+  					function getFifteen(){
+  						var checkFifteen = document.getElementById("fifteen");
+  						var textFifteen = document.getElementById("printFifteen");
+  						if (checkFifteen.checked == true){
+    						localStorage.setItem('fifteen' , " https://www.weather.gov/safety/coldwater ");
+  						} else {
+     						localStorage.setItem('fifteen' , " ");
+  						}
+  					}
+
+  					function getTwenty(){
+  						var checkTwenty = document.getElementById("twenty");
+  						var textTwenty = document.getElementById("printTwenty");
+  						if (checkTwenty.checked == true){
+    						localStorage.setItem('twenty' , " https://climatechange.lta.org/climate-impacts/water-temperatures/ ");
+  						} else {
+     						localStorage.setItem('twenty' , " ");
+  						}
+  					}
+
+  					function getThirty(){
+  						var checkThirty = document.getElementById("thirty");
+  						var textThirty = document.getElementById("printThirty");
+  						if (checkThirty.checked == true){
+    						localStorage.setItem('thirty' , " https://pondpro.ca/pond-blog/the-effects-of-hot-weather-on-your-pond/ ");
+  						} else {
+     						localStorage.setItem('thirty' , " ");
+  						}
+  					}
+
+  					function getFourty(){
+  						var checkFourty = document.getElementById("fourty");
+  						var textFourty = document.getElementById("printFourty");
+  						if (checkFourty.checked == true){
+    						localStorage.setItem('fourty' , " https://www.iucn.org/resources/issues-brief/ocean-warming ");
+  						} else {
+     						localStorage.setItem('fourty' , " ");
+  						}
+  					}
+
+  					function getFive(){
+  						var checkFive = document.getElementById("five");
+  						var textFive = document.getElementById("printFive");
+  						if (checkFive.checked == true){
+    						localStorage.setItem('five' , " https://atlas-scientific.com/blog/causes-of-low-dissolved-oxygen-in-water/ ");
+  						} else {
+     						localStorage.setItem('five' , " ");
+  						}
+  					}
+
+  					function getSeven(){
+  						var checkSeven = document.getElementById("seven");
+  						var textSeven = document.getElementById("printSeven");
+  						if (checkSeven.checked == true){
+    						localStorage.setItem('seven' , " https://www.epa.gov/caddis-vol2/dissolved-oxygen#:~:text=Temperature%3A%20High%20temperatures%20reduce%20the,due%20to%20respiration%20and%20decomposition. ");
+  						} else {
+     						localStorage.setItem('seven' , " ");
+  						}
+  					}
+
+  					function getNine(){
+  						var checkNine = document.getElementById("nine");
+  						var textNine = document.getElementById("printNine");
+  						if (checkNine.checked == true){
+    						localStorage.setItem('nine' , " https://www.fondriest.com/environmental-measurements/parameters/water-quality/dissolved-oxygen/#:~:text=Dissolved%20Oxygen%20Saturation,-Not%20all%20water&text=In%20a%20stable%20body%20of,as%20it%20can%20in%20equilibrium. ");
+  						} else {
+     						localStorage.setItem('nine' , " ");
+  						}
+  					}
+
+  					function getEleven(){
+  						var checkEleven = document.getElementById("eleven");
+  						var textEleven = document.getElementById("printEleven");
+  						if (checkEleven.checked == true){
+    						localStorage.setItem('eleven' , " https://www.sciencedirect.com/topics/earth-and-planetary-sciences/dissolved-oxygen ");
+  						} else {
+     						localStorage.setItem('eleven' , " ");
+  						}
+  					}
+
+  					function getSixPH(){
+  						var checkSixPH = document.getElementById("sixPH");
+  						var textSixPH = document.getElementById("printSixPH");
+  						if (checkSixPH.checked == true){
+    						localStorage.setItem('sixPH' , " https://www.watercare.com/about-us/blog/41738-what-does-low-ph-mean-is-it-safe-for-my-household.html#:~:text=Low%20pH%20water%20is%20slightly,metals%20into%20your%20drinking%20water. ");
+  						} else {
+     						localStorage.setItem('sixPH' , " ");  						}
+  					}
+
+  					function getSevenPH(){
+  						var checkSevenPH = document.getElementById("sevenPH");
+  						var textSevenPH = document.getElementById("printSevenPH");
+  						if (checkSevenPH.checked == true){
+    						localStorage.setItem('sevenPH' , " https://www.quality-life-solutions.com/about-us/blogs/35683-does-low-or-high-ph-affect-my-water.html ");
+  						} else {
+     						localStorage.setItem('sevenPH' , " ");
+  						}
+  					}
+
+  					function getEightPH(){
+  						var checkEightPH = document.getElementById("eightPH");
+  						var textEightPH = document.getElementById("printEightPH");
+  						if (checkEightPH.checked == true){
+    						localStorage.setItem('eightPH' , " https://www.fondriest.com/environmental-measurements/parameters/water-quality/ph/ ");
+  						} else {
+     						localStorage.setItem('eightPH' , " ");
+  						}
+  					}
+
+  					function getSalZero(){
+  						var checkSalZero = document.getElementById("salZero");
+  						var textSalZero = document.getElementById("printSalZero");
+  						if (checkSalZero.checked == true){
+    						localStorage.setItem('salZero' , " https://www.eldoradosprings.com/blog/what-causes-a-high-ph-level-in-water ");
+  						} else {
+     						localStorage.setItem('salZero' , " ");
+  						}
+  					}
+
+  					function getSalTen(){
+  						var checkSalTen = document.getElementById("salTen");
+  						var textSalTen = document.getElementById("printSalTen");
+  						if (checkSalTen.checked == true){
+    						localStorage.setItem('salTen' , " https://www.carbotecnia.info/learning-center/water-treatment/low-salt-water-in-health/?lang=en ");
+  						} else {
+     						localStorage.setItem('salTen' , " ");
+  						}
+  					}
+
+  					function getSalTwenty(){
+  						var checkSalTwenty = document.getElementById("salTwenty");
+  						var textSalTwenty = document.getElementById("printSalTwenty");
+  						if (checkSalTwenty.checked == true){
+    						localStorage.setItem('salTwenty' , " https://www.watereducation.org/aquapedia-background/salinity  ");
+  						} else {
+     						localStorage.setItem('salTwenty' , " ");
+  						}
+  					}
+
+  					function getSalThirty(){
+  						var checkSalThirty = document.getElementById("salThirty");
+  						var textSalThirty = document.getElementById("printSalThirty");
+  						if (checkSalThirty.checked == true){
+    						localStorage.setItem('salThirty' , " https://www.qld.gov.au/environment/land/management/soil/salinity/impacts ");
+  						} else {
+     						localStorage.setItem('salThirty' , " ");
+  						}
+  					}
+
+  					function getNitrogen(){
+  						var checkNitrogen = document.getElementById("nitrogen");
+  						var textNitrogen= document.getElementById("printNitrogen");
+  						if (checkNitrogen.checked == true){
+    						localStorage.setItem('nitrogen' , " https://www.usgs.gov/special-topics/water-science-school/science/nitrogen-and-water ");
+  						} else {
+     						localStorage.setItem('nitrogen' , " ");
+  						}
+  					}
+
+  					function getPhosphorus(){
+  						var checkPhosphorus = document.getElementById("phosphorus");
+  						var textPhosphorus= document.getElementById("printPhosphorus");
+  						if (checkPhosphorus.checked == true){
+    						localStorage.setItem('phosphorus' , " https://www.usgs.gov/special-topics/water-science-school/science/phosphorus-and-water  ");
+  						} else {
+     						localStorage.setItem('phosphorus' , " ");
+  						}
+  					}
+
+  		
+  					function getIron(){
+  						var checkIron = document.getElementById("iron");
+  						var textIron= document.getElementById("printIron");
+  						if (checkIron.checked == true){
+    						localStorage.setItem('iron' , " https://www.frontiersin.org/articles/10.3389/fmars.2019.00022/full ");
+  						} else {
+     						localStorage.setItem('iron' , " ");
+  						}
+  					}
+
+  					function getSilicon(){
+  						var checkSilicon = document.getElementById("silicon");
+  						var textSilicon= document.getElementById("printSilicon");
+  						if (checkSilicon.checked == true){
+    						localStorage.setItem('silicon' , " https://bg.copernicus.org/articles/18/1269/2021/ ");
+  						} else {
+     						localStorage.setItem('silicon' , " ");
+  						}
+  					}
+
+  					function getMagnessium(){
+  						var checkMagnessium = document.getElementById("magnessium");
+  						var textMagnessium= document.getElementById("printMagnessium");
+  						if (checkMagnessium.checked == true){
+    						localStorage.setItem('magnessium' , " https://www.sciencehistory.org/distillations/magnesium-from-the-sea-to-the-stars ");
+  						} else {
+     						localStorage.setItem('magnessium' , " ");
+  						}
+  					}
+
+  					function getPotassium(){
+  						var checkPotassium = document.getElementById("potassium");
+  						var textPotassium= document.getElementById("printPotassium");
+  						if (checkPotassium.checked == true){
+    						localStorage.setItem('potassium' , " https://www.lenntech.com/periodic/water/potassium/potassium-and-water.htm ");
+  						} else {
+     						localStorage.setItem('potassium' , " ");
+  						}
+  					}
+
+  					function getCalcium(){
+  						var checkCalcium = document.getElementById("calcium");
+  						var textCalcium= document.getElementById("printCalcium");
+  						if (checkCalcium.checked == true){
+    						localStorage.setItem('calcium' , " https://www.iisd.org/ela/blog/commentary/calcium-matters-fresh-water-happens-not-enough/ ");
+  						} else {
+     						localStorage.setItem('calcium' , " ");
+  						}
+  					}
+
+
+
+  				
+
+
+
+
+	
+  				</script>
 
  				<input type="submit" value="Submit">
 

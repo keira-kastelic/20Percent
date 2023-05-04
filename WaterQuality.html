@@ -11,15 +11,146 @@ Water Calculator output value file
 		<meta name = “viewport” content = “width = device-width, initial-0scale = 1.0”> <!-- creaing the page dimensions and character-->
 		<title> Water Quality Input </title> <!-- creating a title for the website -->
 	<head>
+		<style>
+	/* creating the style for the headers class */
+	body {
+  		font-family: NewCenturySchlbak-Bold;
+  		margin: 0;
+		}
+
+		/* creating the header characteristics */
+		.header {
+  		padding: 60px;
+  		text-align: center;
+  		background: #0000FF;
+  		color: white;
+  		font-size: 30px;
+  			}
+  	</style>
 	<body> 
 		<header> 
-			Here is what we found: <!-- creating a header --> 
+			<div class="header"> <!-- calling the header class I created on the header -->
+  			<h1> HERE IS WHAT WE FOUND: </h1> <!-- naming the header -->
+		</div> 
 		</header>
 		<main> 
          <form action = "display.html"> <!-- specifying the url action -->
+
+         <div> <span id = 'sea' ></span> </div>
+         <div> <span id = 'ocean' ></span> </div>
+         <div> <span id = 'lake' ></span> </div>
+         <div> <span id = 'river' ></span> </div>
+         <div> <span id = 'pond' ></span> </div>
+         <div> <span id = 'wetlands' ></span> </div>
+         <div> <span id = 'fifteen' ></span> </div>
+         <div> <span id = 'twenty' ></span> </div>
+         <div> <span id = 'thirty' ></span> </div>
+         <div> <span id = 'fourty' ></span> </div>
+         <div> <span id = 'five' ></span> </div>
+         <div> <span id = 'seven' ></span> </div>
+         <div> <span id = 'nine' ></span> </div>
+         <div> <span id = 'eleven' ></span> </div>
+         <div> <span id = 'sixPH' ></span> </div>
+         <div> <span id = 'sevenPH' ></span> </div>
+         <div> <span id = 'eightPH' ></span> </div>
+         <div> <span id = 'salZero' ></span> </div>
+         <div> <span id = 'salTen' ></span> </div>
+         <div> <span id = 'salTwenty' ></span> </div>
+         <div> <span id = 'salThirty' ></span> </div>
+         <div> <span id = 'nitrogen' ></span> </div>
+         <div> <span id = 'phosphorus' ></span> </div>
+         <div> <span id = 'iron' ></span> </div>
+         <div> <span id = 'silicon' ></span> </div>
+         <div> <span id = 'magnessium' ></span> </div>
+         <div> <span id = 'potassium' ></span> </div>
+         <div> <span id = 'calcium' ></span> </div>
+
+
 		<script type="text/javascript"> /* using the javascript tag */
-			var typeIn = sessionStorage.getItem("type"); /* getting the variables form the other file */
-			console.log(typeOut); /* testing the new variable by printing it*/
+			
+			const Sea = localStorage.getItem('sea');
+			document.getElementById('sea').innerHTML = Sea;
+
+		    const Ocean = localStorage.getItem('ocean');
+		    document.getElementById('ocean').innerHTML = Ocean;
+
+		    const Lake = localStorage.getItem('lake');
+		    document.getElementById('lake').innerHTML = Lake;
+
+		    const River = localStorage.getItem('river');
+		    document.getElementById('river').innerHTML = River;
+
+		    const Pond = localStorage.getItem('pond');
+			document.getElementById('pond').innerHTML = Pond;
+
+			const Wetlands = localStorage.getItem('wetlands');
+			document.getElementById('wetlands').innerHTML = Wetlands;
+
+			const Fifteen = localStorage.getItem('fifteen');
+			document.getElementById('fifteen').innerHTML = Fifteen;
+
+			const Twenty = localStorage.getItem('twenty');
+			document.getElementById('twenty').innerHTML = Twenty;
+
+			const Thirty = localStorage.getItem('thirty');
+			document.getElementById('thirty').innerHTML = Thirty;
+
+			const Fourty = localStorage.getItem('fourty');
+			document.getElementById('fourty').innerHTML = Fourty;
+
+			const Five = localStorage.getItem('five');
+			document.getElementById('five').innerHTML = Five;
+
+			const Seven = localStorage.getItem('seven');
+			document.getElementById('seven').innerHTML = Seven;
+
+			const Eight = localStorage.getItem('eight');
+			document.getElementById('eight').innerHTML = Eight;
+
+			const SixPH = localStorage.getItem('sixPH');
+			document.getElementById('sixPH').innerHTML = SixPH;
+
+			const SevenPH = localStorage.getItem('sevenPH');
+			document.getElementById('sevenPH').innerHTML = SevenPH;
+
+			const EightPH = localStorage.getItem('eightPH');
+			document.getElementById('eightPH').innerHTML = EightPH;
+
+			const SalZero = localStorage.getItem('salZero');
+			document.getElementById('salZero').innerHTML = SalZero;
+
+			const SalTen = localStorage.getItem('salTen');
+			document.getElementById('salTen').innerHTML = SalTen;
+
+			const SalTwenty = localStorage.getItem('salTwenty');
+			document.getElementById('salTwenty').innerHTML = SalTwenty;
+
+			const SalThirty = localStorage.getItem('salThirty');
+			document.getElementById('salThirty').innerHTML = SalThirty;
+
+			const Nitrogen = localStorage.getItem('nitrogen');
+			document.getElementById('nitrogen').innerHTML = Nitrogen;
+
+			const Phosphorus = localStorage.getItem('phosphorus');
+			document.getElementById('phosphorus').innerHTML = Phosphorus;
+
+			const Iron = localStorage.getItem('iron');
+			document.getElementById('iron').innerHTML = Iron;
+
+			const Silicon = localStorage.getItem('silicon');
+			document.getElementById('silicon').innerHTML = Silicon;
+
+			const Magnessium = localStorage.getItem('magnessium');
+			document.getElementById('magnessium').innerHTML = Magnessium;
+
+			const Potassium = localStorage.getItem('potassium');
+			document.getElementById('potassium').innerHTML = Potassium;
+
+			const Calcium = localStorage.getItem('calcium');
+			document.getElementById('calcium').innerHTML = Calcium;
+
+		
+
 		</script>
 		</main>
 		<footer> 
