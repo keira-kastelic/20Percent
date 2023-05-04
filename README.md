@@ -14,3 +14,6 @@ This is where I code the different if statements and conditions of each of the c
 
 User:
 In order to run the code, you must download the files into a text reader. From there the user only has to click on the HTML file that opens up a search browser. The user must select boxes and press the submit button to get results from the water quality calculator.
+
+<img width="1224" alt="Screen Shot 2023-05-03 at 10 52 04 PM" src="https://user-images.githubusercontent.com/79609952/236115168-22c135e1-b4b0-4014-a7f4-29f085e79d86.png">
+<img width="1221" alt="Screen Shot 2023-05-03 at 10 52 12 PM" src="https://user-images.githubusercontent.com/79609952/236115176-12f6939a-645e-4c5b-9515-73a3fd2c203e.png">
